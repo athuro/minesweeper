@@ -9,7 +9,7 @@
 
 .unclicked{
     background-color: rgb(193, 191, 191);
-    border: thick solid gray;
+    border: 2px solid gray;
     border-style: outset;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@
 
 .clicked{
     background-color: rgb(255, 255, 255);
-    border: thick solid gray;
+    border: 2px solid gray;
     border-style: inset;
     display: flex;
     align-items: center;
