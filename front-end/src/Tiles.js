@@ -80,9 +80,8 @@ const Tiles = (props) => {
     const [tileArray, setTileArray] = useState([])
     const [firstClickIndex, setFirstClickIndex] = useState(-1)
     const [firstClick, setFirstClick] = useState(true)
-    const [startTime, setStartTime] = useState(Date.now())
+    const [flagsLeft, setFlagsLeft] = useState(bombCount)
     const [reload, setReload] = useState(true)
-    // setStartTime(Date.now())
 
     useEffect(() => {
         const generateTiles = () => {
@@ -165,20 +164,23 @@ const Tiles = (props) => {
                     tileArray[i].wasClicked = true
                     if(tileArray[i].isBomb) {
                         let title = document.getElementById('title')
-                        title.innerHTML = 'You Suck, Please Restart'
+                        title.innerHTML = 'Game Over, Click Play to Resart'
                     } else if (tileArray[i].adjacentBombCount === 0) {
                         clickAdjacentTiles(i)
                     } else {
                         // console.log(tileArray[i].adjacentBombCount)
                         return <p>{tileArray[i].adjacentBombCount}</p>
                     }
-                    console.log(tileArray[i])
                 }
 
             } else if (event.type === 'contextmenu') {
                 if(!tileArray[i].wasClicked) { //can't flag a clicked tile
                     tileArray[i].wasFlagged = !tileArray[i].wasFlagged
-                    console.log(tileArray[i])
+                    if(tileArray[i].wasFlagged){
+                        setFlagsLeft(flagsLeft-1)
+                    } else {
+                        setFlagsLeft(flagsLeft+1)
+                    }
                 }
             }
         }
@@ -186,7 +188,7 @@ const Tiles = (props) => {
 
     return (
         <>
-
+            <div className="flagCount">Mines Remaining: {flagsLeft}</div>
             <div className="board" style={{ gridTemplateColumns: `repeat(${size}, auto)` }}>
                 {tileArray.map((e,i) => {
                     return(

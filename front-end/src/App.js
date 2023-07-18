@@ -45,6 +45,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Tiles difficulty={selected} />} />
       </Routes>
+
+      <p>I prioritized perfecting the game logic over the database levels to practice my algorithmic thinking</p>
     </>
   );
 }
