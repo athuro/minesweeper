@@ -1,0 +1,19 @@
+.timer{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    padding-left: 4%;
+}
+
+.gameControl{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+    
+  }
+  
+  #start{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: large;
+  }

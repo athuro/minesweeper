@@ -4,32 +4,43 @@
     margin-right: auto;
     grid-template-columns: repeat(10, auto);
     max-width: fit-content;
-    grid-row-gap: .1vh;
+    grid-row-gap: 0;
 }
 
 .unclicked{
-    width: 8vh;
-    height: 8vh;
-    background-color: lightgray;
+    background-color: rgb(193, 191, 191);
     border: thick solid gray;
     border-style: outset;
-    
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .clicked{
-    width: 8vh;
-    height: 8vh;
     background-color: rgb(255, 255, 255);
     border: thick solid gray;
     border-style: inset;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: large;
 }
 
-.flag {
-    position: relative;
-    margin: -1.05vh;
-    width: 6vh;
-    height:6vh;
+.one{
+    color:blue;
+}
+
+.two{
+    color: green;
+}
+
+.three {
+    color: red;
+}
+
+.four {
+    color: purple;
 }
 
